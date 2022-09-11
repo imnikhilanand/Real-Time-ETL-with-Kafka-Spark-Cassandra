@@ -43,5 +43,12 @@ val dstream = KafkaUtils.createDirectStream[String, String](
   preferredHosts,
   ConsumerStrategies.Subscribe[String, String](topics, kafkaParams, offsets))
 
+// printing the streaming data
+dstream.map(record=>(record.value().toString)).print
 
+// pushing data from spark to Cassandra database
+dstream.map(line => {val arr = line.value().toString.filter(_ >= ' ').split("""\$"""); (arr(0),arr(1),arr(2))}).saveToCassandra("my_keyspace", "user_details_5", SomeColumns("name","address","date"))
+
+// starting the spark context
+ssc.start
 
