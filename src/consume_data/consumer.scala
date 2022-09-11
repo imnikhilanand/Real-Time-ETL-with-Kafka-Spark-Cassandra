@@ -25,5 +25,23 @@ val preferredHosts = LocationStrategies.PreferConsistent
 // listening to topic registered_user_2 (topic name)
 val topics = List("registered_user_2")
 
+// assigning kafka parameters
+val kafkaParams = Map(
+  "bootstrap.servers" -> "localhost:9092",
+  "key.deserializer" -> classOf[StringDeserializer],
+  "value.deserializer" -> classOf[StringDeserializer],
+  "group.id" -> "spark-streaming-notes",
+  "auto.offset.reset" -> "earliest"
+)
+
+// offsets
+val offsets = Map(new TopicPartition("registered_user_2", 0) -> 2L)
+
+// creating direct sream from kafka to spark
+val dstream = KafkaUtils.createDirectStream[String, String](
+  ssc,
+  preferredHosts,
+  ConsumerStrategies.Subscribe[String, String](topics, kafkaParams, offsets))
+
 
 
