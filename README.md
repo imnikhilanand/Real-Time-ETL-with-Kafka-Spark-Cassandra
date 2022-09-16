@@ -17,10 +17,13 @@ To produce syntheic data, Faker library is used that generates fake data which w
 
 ```
 
+# importing the faker library
 from faker import Faker
 
+# creating the instance of the class
 faker = Faker()
 
+# function to generate synthetic data
 def get_registered_user():
 	return faker.name()+"$"+faker.address()+"$"+faker.year()
 
@@ -30,8 +33,10 @@ The data is produced using KafkaProduce library in Python on registered_user_2 t
 
 ```
 
+# calling the class instance for the Kafka producer
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'],value_serializer=json_serializer)
 
+# producing the data in the topic
 producer.send("registered_user_2",registered_user)
 		
 ```
