@@ -7,7 +7,7 @@ The real-time messages are pushed by a python script. The data is then produced 
 
 Below is the architecture of the end-to-end streaming pipeline.
 
-<img src="img/architecture.png" width='80%' style="align-content: center;">
+<img src="img/architecture.png" width='80%' align="center">
 
 
 
