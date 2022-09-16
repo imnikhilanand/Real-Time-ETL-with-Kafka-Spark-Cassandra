@@ -90,19 +90,18 @@ select * from user_details_5;
 
 ```
 
- name                    | address                                                       | date
--------------------------+---------------------------------------------------------------+-------
-            "James Olson |                    983 Alvarado Vista\nPort Matthew, MA 57760 | 2002"
-             "Eric Olson |                              PSC 9053, Box 6656\nAPO AA 71822 | 1984"
-       "Gabriella Steele |                      649 Steele Parks\nNew Adamstad, IN 74098 | 1979"
-           "Sarah Garner |                21793 Diaz Rue Suite 260\nEmilymouth, NV 68222 | 2019"
-          "Joshua Wilson |      6555 Herman Islands Suite 781\nNew Destinystad, DE 03728 | 1978"
-          "Travis Parker |                              Unit 9943 Box 7215\nDPO AA 36455 | 1970"
-            "Jill Rivera |               727 Linda Manors Apt. 542\nNew Marcia, SC 88348 | 2000"
-          "Connie Werner |       69793 Derek Mills Apt. 332\nNorth Jeffreystad, CO 36671 | 1983"
-            "Megan Baker |                        949 Nguyen Pass\nJohnborough, IL 70770 | 1987"
+<table>
+	<tr><th>name</th><th>address</th><th>data</th></tr>
+	<tr><td>James Olson</td><td>983 Alvarado Vista\nPort Matthew, MA 57760</td><td>2002</td></tr>
+	<tr><td>Eric Olson</td><td>PSC 9053, Box 6656\nAPO AA 71822</td><td>1984</td></tr>
+	<tr><td>Gabriella Steele</td><td>649 Steele Parks\nNew Adamstad, IN 74098</td><td>1979</td></tr>
+	<tr><td>Sarah Garner</td><td>21793 Diaz Rue Suite 260\nEmilymouth, NV 68222</td><td>2019</td></tr>
+	<tr><td>Joshua Wilson</td><td>6555 Herman Islands Suite 781\nNew Destinystad, DE 03728</td><td>1978</td></tr>
+	<tr><td>Travis Parker</td><td>Unit 9943 Box 7215\nDPO AA 36455</td><td>1970</td></tr>
+	<tr><td>Jill Rivera</td><td>727 Linda Manors Apt. 542\nNew Marcia, SC 88348</td><td>2000</td></tr>
+</table>
 
 
- ## Summary
+## Summary
  
- A real-time data pipelines is created that produces and consumes messages. The pipeline can be scaled on multiple machines in hormizontal manner. The incoming data is distributed among different nodes based on the key of the messages and partitioned based on the hash function. This pipeline can be used to create more complex and scalable data pipleine to solve more real world streaming problems.
+A real-time data pipelines is created that produces and consumes messages. The pipeline can be scaled on multiple machines in hormizontal manner. The incoming data is distributed among different nodes based on the key of the messages and partitioned based on the hash function. This pipeline can be used to create more complex and scalable data pipleine to solve more real world streaming problems.
