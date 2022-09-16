@@ -15,7 +15,7 @@ Below is the architecture of the end-to-end streaming pipeline.
 
 To produce syntheic data, Faker library is used that generates fake data which will later be sent to the producers. The format of the produced data is shown below
 
-'''
+```
 
 from faker import Faker
 
@@ -24,16 +24,17 @@ faker = Faker()
 def get_registered_user():
 	return faker.name()+"$"+faker.address()+"$"+faker.year()
 
-'''
+```
 
 The data is produced using KafkaProduce library in Python on registered_user_2 topic.
 
-'''
+```
+
 producer = KafkaProducer(bootstrap_servers=['localhost:9092'],value_serializer=json_serializer)
 
 producer.send("registered_user_2",registered_user)
 		
-'''
+```
 
 
 ## Consumer
